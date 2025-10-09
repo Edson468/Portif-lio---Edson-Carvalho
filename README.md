@@ -43,7 +43,7 @@ Meu portfólio pessoal desenvolvido com **React** e **Tailwind CSS**, apresentan
 ## 🌍 Versão Online
 
 Veja o portfólio em produção:  
-🔗 [https://seu-link-de-deploy.vercel.app](https://seu-link-de-deploy.vercel.app)
+🔗 [https://seu-link-de-deploy.vercel.app](https://portif-lio-edson-carvalho.vercel.app/)
 
 ## 📬 Contato
 
