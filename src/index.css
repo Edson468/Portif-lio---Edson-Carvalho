@@ -1,13 +1,201 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* src/index.css */
+
+/* --- Diretivas do Tailwind CSS --- */
+/* Importa as classes base, de componentes e utilitárias do Tailwind. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Classes de Acessibilidade --- */
+/* Classe para esconder um elemento visualmente, mas mantê-lo acessível para leitores de tela. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* --- Animações --- */
+/* Animação de fade-in com um leve movimento de subida. */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classe utilitária para aplicar a animação `fade-in-up`. */
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+/* Animação de fade-in com um movimento de subida um pouco maior. */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Classe utilitária para aplicar a animação `fade-in-up` com uma duração maior. */
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+/* --- Utilitários de Estilo --- */
+/* Classe para esconder a barra de rolagem em diferentes navegadores, mas mantendo a funcionalidade. */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera, etc. */
+}
+
+/* --- Estilos de Componentes Personalizados --- */
+/* Estilo para os botões da seção de contato, com um efeito de brilho no hover. */
+.contact-button {
+  @apply flex flex-col items-center p-6 rounded-xl shadow-sm w-32 relative overflow-hidden;
+  transition: all 0.3s ease;
+  border-width: 1px;
+}
+
+.contact-button::before {
+  /* Pseudo-elemento que cria o efeito de brilho. */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  transition: left 0.7s;
+  z-index: 1;
+}
+
+.contact-button:hover {
+  @apply shadow-md;
+}
+
+/* Move o brilho da esquerda para a direita no hover. */
+.contact-button:hover::before {
+  left: 100%;
+}
+
+.contact-button > * {
+  /* Garante que o conteúdo do botão (ícone e texto) fique acima do efeito de brilho. */
+  position: relative;
+  z-index: 2;
+}
+
+/* Estilo para os cards de projeto */
+.project-card {
+  display: block;
+  height: 100%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+}
+
+/* Efeito de elevação e sombra no hover para os cards de projeto. */
+.project-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border-radius: 0.75rem; /* Mantém o arredondamento durante a animação */
+}
+
+/* Garante que o conteúdo do card não seja afetado pela transformação */
+.project-card > div {
+  height: 100%;
+}
+
+/* Estilo para os botões de ícone de contato no rodapé. */
+.footer-contact-button {
+  @apply flex items-center justify-center w-12 h-12 rounded-full bg-slate-800 relative overflow-hidden;
+  transition: all 0.3s ease;
+}
+
+.footer-contact-button::before {
+  /* Pseudo-elemento para o efeito de brilho no hover. */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.7s;
+  z-index: 1;
+}
+
+.footer-contact-button:hover {
+  @apply bg-slate-700;
+}
+
+/* Move o brilho da esquerda para a direita no hover. */
+.footer-contact-button:hover::before {
+  left: 100%;
+}
+
+.footer-contact-button > * {
+  /* Garante que o ícone fique acima do efeito de brilho. */
+  position: relative;
+  z-index: 2;
+}
+
+/* Animação suave de fade + slide para o título do Hero */
+@keyframes fade-in-slide {
+  from {
+    opacity: 0;
+    transform: translateY(20px) translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.animate-fade-in-slide {
+  animation: fade-in-slide 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Animação suave de gradiente de fundo */
+.hero-gradient-animation {
+  background: linear-gradient(125deg, #0f172a, #1e3a8a, #0f172a, #1e3a8a);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
