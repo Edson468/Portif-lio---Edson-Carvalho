@@ -68,7 +68,7 @@ export default function Hero() {
 
             <p className="text-xl text-blue-200 mb-8">
               Sou um profissional em transição de carreira, migrando da área administrativa onde atuei como{" "}
-              <span className="text-yellow-400">Analista Backoffice na Almaviva</span>{" "}
+              <span className="text-yellow-400">Analista Backoffice</span>{" "}
               para minha verdadeira paixão: o desenvolvimento front-end.
             </p>
 
