@@ -37,8 +37,8 @@ export const projects = [
     id: 4,
     title: "Fanpage One Piece",
     description: "Fanpage dedicada ao anime One Piece, com informações sobre personagens e episódios.",
-    link: "https://edson468.github.io/https---github.com-Edson468-One-Piece/",
-    image: "/projetos/Fanpage-One-Piece.png"
+    link: "https://fanpage-one-piece.vercel.app/",
+    image: "/projetos/fan-page-one-piece.png"
   },
   {
     id: 5,
