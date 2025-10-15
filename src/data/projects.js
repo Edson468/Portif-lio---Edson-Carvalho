@@ -30,8 +30,8 @@ export const projects = [
     id: 3,
     title: "To-do List",
     description: "Uma aplicação web para gerenciar suas tarefas diárias.",
-    link: "https://edson468.github.io/To-do-List/",
-    image: "/projetos/To-DoList.png"
+    link: "https://new-todo-list-ten.vercel.app/",
+    image: "/projetos/New-To-Do-List.png"
   },
   {
     id: 4,
