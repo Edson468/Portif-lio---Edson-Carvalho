@@ -5,7 +5,7 @@ import {
   HiFolder,
   HiCommandLine,
   HiEnvelope,
-  HiChevronDoubleUp
+  //HiChevronDoubleUp
 } from 'react-icons/hi2';
 
 export default function Header() {
@@ -24,13 +24,12 @@ export default function Header() {
           setActiveSection(section);
         }
       }
-      // Fecha o menu ao rolar
-      if (isMenuOpen) setIsMenuOpen(false);
+      
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isMenuOpen]);
+  }, []); // 👈 Dependência atualizada: agora é vazia para evitar recriação desnecessária
 
   // Rolagem suave
   const scrollToSection = (id) => {
