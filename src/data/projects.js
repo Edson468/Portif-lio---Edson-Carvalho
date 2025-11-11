@@ -31,7 +31,8 @@ export const projects = [
     title: "To-do List",
     description: "Uma aplicação web para gerenciar suas tarefas diárias.",
     link: "https://new-todo-list-ten.vercel.app/",
-    image: "/projetos/New-To-Do-List.png"
+    image: "/projetos/New-To-Do-List.png",
+    featured: true // ✅ Destacado
   },
   {
     id: 4,
@@ -52,20 +53,23 @@ export const projects = [
     title: "BarberApp - React",
     description: "Aplicação feita em React para agendamento de clientes, caixa e despesas em uma barbearia.",
     link: "https://github.com/Edson468/BarberApp",
-    image: "/projetos/BarberApp.png"
+    image: "/projetos/BarberApp.png",
+    featured: true // ✅ Destacado
   },
   {
     id: 7,
     title: "Barbershop - React",
     description: "Landing page feita em React para uma barbearia.",
     link: "https://barbershop-six-sigma.vercel.app/",
-    image: "/projetos/Landing-page-barbearia.png"
+    image: "/projetos/Landing-page-barbearia.png",
+    featured: true // ✅ Destacado
   },
   {
     id: 8,
     title: "Farmacia de Manipulação - React",
     description: "Landing page feita em React para uma Farmacia de Manipulação.",
     link: "https://farmacia-de-manipula-o.vercel.app/",
-    image: "/projetos/Farmacia-Manipulacao.png"
+    image: "/projetos/Farmacia-Manipulacao.png",
+    //featured: true // ✅ Destacado
   }
 ];

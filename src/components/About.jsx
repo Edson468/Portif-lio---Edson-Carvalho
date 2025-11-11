@@ -7,7 +7,7 @@ export default function About() {
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
-      const offsetTop = contactSection.offsetTop - 80;
+      const offsetTop = contactSection.offsetTop - 60;
       window.scrollTo({
         top: offsetTop,
         behavior: 'smooth'
@@ -16,7 +16,7 @@ export default function About() {
   };
 
   return (
-    <AnimatedSection id="about" className="bg-white">
+    <AnimatedSection id="about" className="py-12 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mt-16 mb-8">Sobre Mim</h2>
         

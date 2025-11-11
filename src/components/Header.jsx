@@ -36,7 +36,7 @@ export default function Header() {
     const element = document.getElementById(id);
     if (element) {
       window.scrollTo({
-        top: element.offsetTop - 80,
+        top: element.offsetTop - 70,
         behavior: 'smooth'
       });
       setIsMenuOpen(false); // Fecha o menu após clicar
