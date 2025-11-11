@@ -53,5 +53,19 @@ export const projects = [
     description: "Aplicação feita em React para agendamento de clientes, caixa e despesas em uma barbearia.",
     link: "https://github.com/Edson468/BarberApp",
     image: "/projetos/BarberApp.png"
+  },
+  {
+    id: 7,
+    title: "Barbershop - React",
+    description: "Landing page feita em React para uma barbearia.",
+    link: "https://barbershop-six-sigma.vercel.app/",
+    image: "/projetos/Landing-page-barbearia.png"
+  },
+  {
+    id: 8,
+    title: "Farmacia de Manipulação - React",
+    description: "Landing page feita em React para uma Farmacia de Manipulação.",
+    link: "https://farmacia-de-manipula-o.vercel.app/",
+    image: "/projetos/Farmacia-Manipulacao.png"
   }
 ];
