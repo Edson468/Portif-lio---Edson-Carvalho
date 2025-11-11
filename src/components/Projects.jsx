@@ -4,14 +4,14 @@ import { projects } from '../data/projects';
 import AnimatedSection from './AnimatedSection';
 
 export default function Projects() {
+  // Estado para controlar a abertura/fechamento do modal de projetos.
   const [isModalOpen, setIsModalOpen] = useState(false);
   // Filtra só os projetos marcados como featured: true
   const featuredProjects = projects.filter(project => project.featured);
 
   const openModal = () => {
     setIsModalOpen(true);
-    // Rola para o topo do modal após abri-lo
-    setTimeout(() => {
+    setTimeout(() => { // Rola para o topo do modal após abri-lo.
       const modalContent = document.querySelector('.modal-content');
       if (modalContent) {
         modalContent.scrollTo(0, 0);
@@ -20,10 +20,10 @@ export default function Projects() {
   };
 
   const closeModal = () => setIsModalOpen(false);
-
+  
   // Fecha modal ao clicar na tecla Escape
   useEffect(() => {
-    const handleEsc = (e) => {
+    const handleEsc = (e) => { // Função para fechar o modal ao pressionar a tecla "Escape".
       if (e.key === 'Escape') closeModal();
     };
     window.addEventListener('keydown', handleEsc);
@@ -32,7 +32,7 @@ export default function Projects() {
 
   // Impede scroll do body quando modal está aberto
   useEffect(() => {
-    if (isModalOpen) {
+    if (isModalOpen) { // Se o modal estiver aberto...
       document.body.classList.add('modal-open');
     } else {
       document.body.classList.remove('modal-open');
@@ -42,10 +42,10 @@ export default function Projects() {
 
   return (
     <AnimatedSection id="projects" className="bg-slate-50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4"> {/* Container principal da seção de projetos. */}
         <h2 className="text-3xl font-bold text-center mb-16">Meus Projetos</h2>
         
-        {/* Projetos principais (só os featured) */}
+        {/* Projetos principais (só os featured). */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto mb-12">
           {featuredProjects.map((project) => (
             <ProjectCard key={project.id} project={project} />
@@ -55,7 +55,7 @@ export default function Projects() {
         {/* Botão "Ver todos" */}
         {projects.length > featuredProjects.length && (
           <div className="text-center">
-            <button
+            <button // Botão para abrir o modal com todos os projetos.
               onClick={openModal}
               className="bg-indigo-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-indigo-700 transition shadow-lg hover:shadow-xl"
             >
@@ -65,14 +65,14 @@ export default function Projects() {
         )}
 
         {/* Modal */}
-        {isModalOpen && (
+        {isModalOpen && ( // Renderiza o modal se isModalOpen for true.
           <div 
             className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-start justify-center p-4 pt-10"
-            onClick={closeModal}
+            onClick={closeModal} // Fecha o modal ao clicar fora da área do conteúdo.
           >
             <div 
               className="bg-white rounded-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto"
-              onClick={(e) => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()} // Impede que o clique dentro do modal feche-o.
             >
               {/* Cabeçalho do modal */}
               <div className="flex justify-between items-center p-6 border-b border-slate-200">

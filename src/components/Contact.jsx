@@ -3,11 +3,11 @@ import React from 'react';
 import { HiEnvelope } from 'react-icons/hi2';
 import { FaLinkedin, FaWhatsapp, FaGithub } from 'react-icons/fa';
 
-// --- Componente Contact ---
 // Exibe as principais formas de contato com ícones e links.
 export default function Contact() {
   // Dados de contato. Substitua pelos seus dados reais.
-  const email = "edson4518@gmail.com";
+  const email = "edson4518@gmail.com"; // Seu email.
+
   const linkedinUrl = "https://www.linkedin.com/in/edson-carvalho-213b051b1/";
   const whatsappNumber = "+5585987855611";
   const githubUrl = "https://github.com/Edson468";
@@ -15,7 +15,7 @@ export default function Contact() {
   return (
     // Seção principal de contato.
     <section id="contact" className="py-20 bg-slate-50">
-      <div className="container mx-auto px-4 max-w-3xl text-center">
+      <div className="container mx-auto px-4 max-w-3xl text-center"> {/* Container principal da seção de contato. */}
         <h2 className="text-3xl font-bold mb-6">Vamos conversar?</h2>
         <p className="text-slate-600 mb-10">
           Interessado em trabalhar junto ou só quer trocar uma ideia?  
@@ -25,7 +25,7 @@ export default function Contact() {
         {/* Container para os botões de contato. */}
         <div className="flex flex-wrap justify-center gap-6">
           {/* Gmail - Vermelho */}
-          <a
+          <a // Link para enviar email.
             href={`mailto:${email}`}
             className="contact-button group bg-red-100 hover:bg-red-400 border-red-500"
             aria-label="Gmail"
@@ -35,7 +35,7 @@ export default function Contact() {
           </a>
 
           {/* LinkedIn - Azul */}
-          <a
+          <a // Link para o LinkedIn.
             href={linkedinUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -47,7 +47,7 @@ export default function Contact() {
           </a>
 
           {/* WhatsApp - Verde */}
-          <a
+          <a // Link para o WhatsApp.
             href={`https://wa.me/${whatsappNumber}`}
             target="_blank"
             rel="noopener noreferrer"
@@ -59,7 +59,7 @@ export default function Contact() {
           </a>
 
           {/* GitHub - Cinza */}
-          <a
+          <a // Link para o GitHub.
             href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"

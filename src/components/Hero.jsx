@@ -4,12 +4,12 @@ import { HiArrowDownTray } from 'react-icons/hi2';
 
 export default function Hero() {
   const [shouldAnimate, setShouldAnimate] = useState(false);
-
+  
   // Dispara animação ao montar
   useEffect(() => {
     const timer = setTimeout(() => setShouldAnimate(true), 300);
     return () => clearTimeout(timer);
-  }, []);
+  }, []); // Inicia a animação após 300ms na montagem do componente.
 
   // Reinicia animação ao voltar ao topo
   useEffect(() => {
@@ -20,11 +20,11 @@ export default function Hero() {
       }
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    return () => window.removeEventListener('scroll', handleScroll); // Limpa o listener ao desmontar.
+  }, []); // Reinicia a animação quando o usuário volta ao topo da página.
 
   const words = "Olá, eu sou Edson Carvalho".split(" ");
-
+  
   return (
     <section id="hero" className="min-h-screen flex items-center text-white overflow-hidden relative">
       {/* Fundo animado */}
@@ -34,7 +34,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/30"></div>
       
       {/* Conteúdo */}
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10"> {/* Container principal da seção Hero. */}
         <div className="flex flex-col md:flex-row items-center gap-12">
           {/* Foto à esquerda */}
           <div className="flex-shrink-0">
@@ -46,7 +46,7 @@ export default function Hero() {
           </div>
 
           {/* Conteúdo à direita */}
-          <div className="text-center md:text-left max-w-2xl">
+          <div className="text-center md:text-left max-w-2xl"> {/* Textos e botões da seção. */}
             <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{ lineHeight: 1.3 }}>
               {words.map((word, i) => (
                 <span
@@ -70,7 +70,7 @@ export default function Hero() {
               Sou um profissional em transição de carreira, migrando da área administrativa onde atuei como{" "}
               <span className="text-yellow-400">Analista Backoffice</span>{" "}
               para minha verdadeira paixão: o desenvolvimento front-end.
-            </p>
+            </p> {/* Descrição da transição de carreira. */}
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <button
@@ -83,7 +83,7 @@ export default function Hero() {
                     });
                   }
                 }}
-                className="bg-cyan-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-cyan-500 transition shadow-lg hover:shadow-xl"
+                className="bg-cyan-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-cyan-500 transition shadow-lg hover:shadow-xl" // Estilos do botão.
               >
                 Ver Meus Projetos
               </button>
@@ -91,7 +91,7 @@ export default function Hero() {
                 href="/edson-carvalho.pdf"
                 download="Edson_Carvalho_Curriculo.pdf"
                 className="border border-cyan-400 text-cyan-300 px-8 py-3 rounded-lg font-semibold hover:bg-cyan-900/30 transition flex items-center justify-center"
-              >
+              > {/* Link para baixar o currículo. */}
                 <HiArrowDownTray className="mr-2" />
                 Baixar CV
               </a>

@@ -3,7 +3,7 @@ import React from 'react';
 import AnimatedSection from './AnimatedSection';
 
 export default function About() {
-  // Função de rolagem suave para contato
+  // Função de rolagem suave para contato.
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
@@ -17,10 +17,10 @@ export default function About() {
 
   return (
     <AnimatedSection id="about" className="py-12 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4"> {/* Container principal da seção "Sobre". */}
         <h2 className="text-3xl font-bold text-center mt-16 mb-8">Sobre Mim</h2>
         
-        <div className="flex flex-col md:flex-row items-center gap-12 mb-6">
+        <div className="flex flex-col md:flex-row items-center gap-12 mb-6"> {/* Layout flexível para organizar o conteúdo em colunas. */}
           {/* Texto à esquerda */}
           <div className="md:w-1/2">
             <div className="space-y-6 text-lg text-slate-700">
@@ -44,7 +44,7 @@ export default function About() {
               </p>
 
               <p className="pt-4 border-t border-slate-200">
-                Estou aberto a novas oportunidades e colaborações. Se quiser trocar ideias ou conhecer mais sobre meu trabalho, fique à vontade para{" "}
+                Estou aberto a novas oportunidades e colaborações. Se quiser trocar ideias ou conhecer mais sobre meu trabalho, fique à vontade para{" "} {/* Convite para contato. */}
                 <button
                   onClick={scrollToContact}
                   className="text-indigo-600 hover:underline font-medium inline underline-offset-2"
@@ -57,7 +57,7 @@ export default function About() {
           </div>
 
           {/* Imagem à direita */}
-          <div className="md:w-1/2 flex justify-center">
+          <div className="md:w-1/2 flex justify-center"> {/* Container da imagem. */}
             <img
               src="/man_working.png" // ← ajuste o nome do seu arquivo
               alt="Edson Carvalho"

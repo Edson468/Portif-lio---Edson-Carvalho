@@ -8,8 +8,11 @@ import {
   //HiChevronDoubleUp
 } from 'react-icons/hi2';
 
+// Componente Header: Barra de navegação do site, com links para as seções e menu mobile.
 export default function Header() {
+  // Estado para controlar a seção ativa (realçada na navegação).
   const [activeSection, setActiveSection] = useState('hero');
+  // Estado para controlar a abertura/fechamento do menu mobile.
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Detecta seção ativa ao rolar
@@ -24,7 +27,6 @@ export default function Header() {
           setActiveSection(section);
         }
       }
-      
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -32,7 +34,7 @@ export default function Header() {
   }, []); // 👈 Dependência atualizada: agora é vazia para evitar recriação desnecessária
 
   // Rolagem suave
-  const scrollToSection = (id) => {
+  const scrollToSection = (id) => { // Função para realizar a rolagem suave até a seção desejada.
     const element = document.getElementById(id);
     if (element) {
       window.scrollTo({
@@ -44,7 +46,7 @@ export default function Header() {
   };
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Função para voltar ao topo da página.
     setIsMenuOpen(false);
   };
 
@@ -52,7 +54,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-sm border-b border-slate-200">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
-        <button 
+        <button
           onClick={scrollToTop}
           className="text-2xl font-bold text-indigo-600 hover:text-indigo-800 transition flex items-center"
           aria-label="Voltar para o início"
@@ -66,9 +68,9 @@ export default function Header() {
         {/* Menu desktop */}
         <nav className="hidden md:flex space-x-6">
           <button
-            onClick={() => scrollToSection('about')}
+            onClick={() => scrollToSection('about')} // Botão "Sobre"
             className={`flex items-center space-x-2 font-medium transition ${
-              activeSection === 'about' 
+              activeSection === 'about'
                 ? 'text-indigo-600' 
                 : 'text-slate-600 hover:text-indigo-600'
             }`}
@@ -77,9 +79,9 @@ export default function Header() {
             <span>Sobre</span>
           </button>
           
-          <button
+          <button // Botão "Projetos"
             onClick={() => scrollToSection('projects')}
-            className={`flex items-center space-x-2 font-medium transition ${
+            className={`flex items-center space-x-2 font-medium transition ${ // Aplica estilos diferentes se a seção estiver ativa.
               activeSection === 'projects' 
                 ? 'text-indigo-600' 
                 : 'text-slate-600 hover:text-indigo-600'
@@ -89,9 +91,9 @@ export default function Header() {
             <span>Projetos</span>
           </button>
           
-          <button
+          <button // Botão "Habilidades"
             onClick={() => scrollToSection('skills')}
-            className={`flex items-center space-x-2 font-medium transition ${
+            className={`flex items-center space-x-2 font-medium transition ${ // Aplica estilos diferentes se a seção estiver ativa.
               activeSection === 'skills' 
                 ? 'text-indigo-600' 
                 : 'text-slate-600 hover:text-indigo-600'
@@ -101,9 +103,9 @@ export default function Header() {
             <span>Habilidades</span>
           </button>
           
-          <button
+          <button // Botão "Contato"
             onClick={() => scrollToSection('contact')}
-            className={`flex items-center space-x-2 font-medium transition ${
+            className={`flex items-center space-x-2 font-medium transition ${ // Aplica estilos diferentes se a seção estiver ativa.
               activeSection === 'contact' 
                 ? 'text-indigo-600' 
                 : 'text-slate-600 hover:text-indigo-600'
@@ -116,7 +118,7 @@ export default function Header() {
 
         {/* Botão menu mobile */}
         <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={() => setIsMenuOpen(!isMenuOpen)} // Alterna a visibilidade do menu mobile.
           className="md:hidden text-slate-700 focus:outline-none"
           aria-label="Alternar menu"
         >
@@ -130,18 +132,18 @@ export default function Header() {
       </div>
 
       {/* Menu mobile suspenso com animação suave */}
-      <div 
+      <div
         className={`md:hidden bg-white border-t border-slate-200 overflow-hidden transition-all duration-300 ease-out ${
-          isMenuOpen 
+          isMenuOpen
             ? 'max-h-96 opacity-100' 
             : 'max-h-0 opacity-0'
         }`}
       >
         <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
           <button
-            onClick={() => scrollToSection('about')}
+            onClick={() => scrollToSection('about')} // Link "Sobre" no menu mobile.
             className={`flex items-center space-x-3 font-medium py-2 ${
-              activeSection === 'about' 
+              activeSection === 'about'
                 ? 'text-indigo-600' 
                 : 'text-slate-700'
             }`}
@@ -150,9 +152,9 @@ export default function Header() {
             <span>Sobre</span>
           </button>
           
-          <button
+          <button // Link "Projetos" no menu mobile.
             onClick={() => scrollToSection('projects')}
-            className={`flex items-center space-x-3 font-medium py-2 ${
+            className={`flex items-center space-x-3 font-medium py-2 ${ // Aplica estilos diferentes se a seção estiver ativa.
               activeSection === 'projects' 
                 ? 'text-indigo-600' 
                 : 'text-slate-700'
@@ -162,9 +164,9 @@ export default function Header() {
             <span>Projetos</span>
           </button>
           
-          <button
+          <button // Link "Habilidades" no menu mobile.
             onClick={() => scrollToSection('skills')}
-            className={`flex items-center space-x-3 font-medium py-2 ${
+            className={`flex items-center space-x-3 font-medium py-2 ${ // Aplica estilos diferentes se a seção estiver ativa.
               activeSection === 'skills' 
                 ? 'text-indigo-600' 
                 : 'text-slate-700'
@@ -174,9 +176,9 @@ export default function Header() {
             <span>Habilidades</span>
           </button>
           
-          <button
+          <button // Link "Contato" no menu mobile.
             onClick={() => scrollToSection('contact')}
-            className={`flex items-center space-x-3 font-medium py-2 ${
+            className={`flex items-center space-x-3 font-medium py-2 ${ // Aplica estilos diferentes se a seção estiver ativa.
               activeSection === 'contact' 
                 ? 'text-indigo-600' 
                 : 'text-slate-700'

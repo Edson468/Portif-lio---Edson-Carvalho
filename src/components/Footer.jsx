@@ -3,11 +3,11 @@ import React from 'react';
 import { HiEnvelope } from 'react-icons/hi2';
 import { FaLinkedin, FaWhatsapp, FaGithub } from 'react-icons/fa';
 
-// --- Componente Footer ---
 // Rodapé do site, contendo ícones de contato e informações de copyright.
 export default function Footer() {
   // Dados de contato. Substitua pelos seus dados reais.
-  const email = "edson4518@gmail.com";
+  const email = "edson4518@gmail.com"; // Seu email.
+
   const linkedinUrl = "https://www.linkedin.com/in/edson-carvalho-213b051b1/";
   const whatsappNumber = "+5585987855611";
   const githubUrl = "https://github.com/Edson468";
@@ -15,11 +15,11 @@ export default function Footer() {
   return (
     // Seção principal do rodapé.
     <footer className="py-12 bg-slate-900 text-slate-400">
-      <div className="container mx-auto px-4 text-center">
+      <div className="container mx-auto px-4 text-center"> {/* Container principal do rodapé. */}
         {/* Ícones de contato */}
         <div className="flex justify-center space-x-8 mb-8">
           {/* Gmail */}
-          <a
+          <a // Link para enviar email.
             href={`mailto:${email}`}
             className="footer-contact-button group"
             aria-label="Gmail"
@@ -28,7 +28,7 @@ export default function Footer() {
           </a>
 
           {/* LinkedIn */}
-          <a
+          <a // Link para o LinkedIn.
             href={linkedinUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -39,7 +39,7 @@ export default function Footer() {
           </a>
 
           {/* WhatsApp */}
-          <a
+          <a // Link para o WhatsApp.
             href={`https://wa.me/${whatsappNumber}`}
             target="_blank"
             rel="noopener noreferrer"
@@ -50,7 +50,7 @@ export default function Footer() {
           </a>
 
           {/* GitHub */}
-          <a
+          <a // Link para o GitHub.
             href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -62,7 +62,7 @@ export default function Footer() {
         </div>
 
         {/* Texto de copyright e créditos */}
-        <p className="mb-2">© {new Date().getFullYear()} Edson Carvalho.</p>
+        <p className="mb-2">© {new Date().getFullYear()} Edson Carvalho.</p> {/* Texto de copyright. */}
       </div>
     </footer>
   );
