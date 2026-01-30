@@ -32,7 +32,7 @@ export const projects = [
     description: "Uma aplicação web para gerenciar suas tarefas diárias.",
     link: "https://new-todo-list-ten.vercel.app/",
     image: "/projetos/New-To-Do-List.png",
-    featured: true // ✅ Destacado
+    //featured: true // ✅ Destacado
   },
   {
     id: 4,
@@ -71,5 +71,13 @@ export const projects = [
     link: "https://farmacia-de-manipula-o.vercel.app/",
     image: "/projetos/Farmacia-Manipulacao.png",
     //featured: true // ✅ Destacado
+  },
+  {
+    id: 9,
+    title: "PetCare - React",
+    description: "Landing page feita em React para uma Petshop.",
+    link: "pet-care-ivory-delta.vercel.app",
+    image: "/projetos/Petcare.png",
+    featured: true // ✅ Destacado
   }
 ];
