@@ -76,7 +76,7 @@ export const projects = [
     id: 9,
     title: "PetCare - React",
     description: "Landing page feita em React para uma Petshop.",
-    link: "pet-care-ivory-delta.vercel.app",
+    link: "https://pet-care-ivory-delta.vercel.app/",
     image: "/projetos/Petcare.png",
     featured: true // ✅ Destacado
   }
