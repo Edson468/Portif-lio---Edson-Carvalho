@@ -54,7 +54,7 @@ export const projects = [
     description: "Aplicação feita em React para agendamento de clientes, caixa e despesas em uma barbearia.",
     link: "https://github.com/Edson468/BarberApp",
     image: "/projetos/BarberApp.png",
-    featured: true // ✅ Destacado
+    //featured: true // ✅ Destacado
   },
   {
     id: 7,
@@ -78,6 +78,14 @@ export const projects = [
     description: "Landing page feita em React para uma Petshop.",
     link: "https://pet-care-ivory-delta.vercel.app/",
     image: "/projetos/Petcare.png",
+    featured: true // ✅ Destacado
+  },
+  {
+    id: 10,
+    title: "Madeira Pura - Moveis Planejados - React",
+    description: "Landing page feita em React para uma empresa de móveis.",
+    link: "https://moveis-planejados-omega.vercel.app/",
+    image: "/projetos/MadeiraPura.png",
     featured: true // ✅ Destacado
   }
 ];
